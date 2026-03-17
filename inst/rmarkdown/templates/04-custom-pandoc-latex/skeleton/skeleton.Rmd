@@ -18,7 +18,7 @@ documentclass: article
 geometry: margin=2cm
 ---
 
-```{r setup}
+```{r setup, echo=FALSE}
 # boilerplate for multithreading, chunk timing and other operations
 # chunk timing code from https://bookdown.org/yihui/rmarkdown-cookbook/time-chunk.html
 
