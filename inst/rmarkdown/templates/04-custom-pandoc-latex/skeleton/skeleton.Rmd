@@ -18,36 +18,47 @@ documentclass: article
 geometry: margin=2cm
 ---
 
-# About
+```{r setup}
+# boilerplate for multithreading, chunk timing and other operations
+# chunk timing code from https://bookdown.org/yihui/rmarkdown-cookbook/time-chunk.html
 
-This template is similar to the `03: My Template (HTML edit)`, but instead applies a custom LaTeX template. This is used to build the final output.
+knitr::knit_hooks$set(time_it = local({
+  now <- NULL
+  function(before, options) {
+    if (before) {
+      # record the current time before each chunk
+      now <<- Sys.time()
+    } else {
+      # calculate the time difference after a chunk
+      res <- difftime(Sys.time(), now, units = "secs")
+      # return a character string to show the time
+      paste("Chunk runtime:", round(res,
+        2), "seconds")
+    }
+  }
+}))
 
-## Alteration to the template
+knitr::opts_chunk$set(time_it = TRUE, echo=TRUE)
 
-You will notice that there are many additional YAML options than usual. At line 153, the template has been altered to include a lot of extra fields, which are enclosed by the dollar signs:
+library(doParallel) #multi-threading
+cl <- makePSOCKcluster((detectCores()-2)) # keep 2 cores free
+registerDoParallel(cl)
+```
+
+```{r imports}
+
 
 ```
-\title{
-\noindent
-\large\textbf{$title$} \hfill \textbf{$first-name$ $last-name$} \\
-\normalsize Module: $module$ \hfill Team members: $for(teammates)$$teammates$$sep$, $endfor$ \\
-Module Lead: $module-lead$ \hfill Lab Date: $lab-date$ \\
-Lab Lead: $TA$ \hfill Due Date: $due-date$
-}
-\date{\vspace{-5ex}}
+
+## Worked Questions:
+
+# 
+
+```{r cluster_close, echo=TRUE}
+#boilerplate cluster closing chunk
+# on a crash, this should be called manually, or placed into problem chunks with on.exit(stopCluster(cl)) to prevent leaving workers open and clogging resources on re-running
+stopCluster(cl)
+
 ```
-
-# Example feature.
-
-This template also includes a bibliography file, containing a single reference for R Markdown [@R-rmarkdown]. The bibliography will be added to the end of the output document.
-
-## Customisation
-
-If you want to create your own LaTeX template, you will have to be at least partly familiar with LaTeX. But this example highlights how the title section can be customised to include additional fields beyond the typical `title`, `date` and `authors` etc.
 
 # References
-
-
-
-
-
