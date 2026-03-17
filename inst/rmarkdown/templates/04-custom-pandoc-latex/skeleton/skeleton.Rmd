@@ -2,12 +2,12 @@
 title: "Untitled"
 first-name: FirstName
 last-name: LastName
-module: ModuleNumber
+unitname: UnitCode
 teammates: [student1, student2]
-module-lead: Prof. Smith
+unitcoordinator: Prof. Smith
 lab-date: XX/XX/XX
 due-date: XX/XX/XX
-TA: John Smith
+tutor: John Smith
 output: 
   pdf_document:
     template: template.tex 
