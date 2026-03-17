@@ -1,31 +1,27 @@
-R Markdown Templates: Minimal Examples <img src="https://bookdown.org/yihui/rmarkdown/images/cover.png" align="right" width=60 height= 100/>
-======================================================
+## Current Version of my R Notebook Template
 
-This repository provides a couple of minimal examples of R Markdown templates. If you are reading this, you have likely found about example in [Chapter 17](https://bookdown.org/yihui/rmarkdown/document-templates.html#) in the R Markdown definitive guide book.
+Compared to default:
+- uses a custom LaTeX template which adds extra fields to the header (this fork localises terminology e.g. Unit as opposed to Module)
+- adds multiprocessing via a local PSOCK cluster and closes it on finishing running, or via manual execution on the chunk to do so e.g. crashing on a chunk to avoid hanging threads
+- adds common boilerplate e.g import chunk, field for exercises etc
 
-The repository contains several basic examples:
-
-- **My Template**: shows a minimal R Markdown template, defining several styles for HTML outputs.
-- **My Template (Extra Files)**: includes a custom logo and a `style.css` file to change the style of tables.
-- **My Template (HTML edits)**: uses a custom HTML template to add a customisable footer to the document.
-- **My Template (LaTeX edits)**: uses a custom LaTeX template which adds extra fields to the header.
-- **My Template (Custom Format)**: this uses a custom R Markdown format to use extra files without a copy having to be made to the directory (see [Chapter 18](https://bookdown.org/yihui/rmarkdown/new-formats.html))
-
-These templates are purposely very basic, being designed to demonstrate how custom styles can easily be created. You may wish to fork the repository to customise the designs further.
-
+- 
 ## Installing the Templates
 
 If you want to trial these templates within R Markdown, you can install the templates directly:
 
 ```
 # install.packages("devtools")
-devtools::install_github("mikey-harper/example-rmd-templates")
+devtools::install_github("lewisridden/r-markdown-template")
 ```
 
 This will install the package `MyTemplates`. Once installed, they will be available within the R Markdown templates as shown below:
 
 ![R Markdown templates](https://i.imgur.com/Cnlbhsm.png)
 
+
+
+
 ## Adapting the Templates
 
-If you want to use the package as a base for your own template, you may want to fork the repository. It will help to read [Chapter 17](https://bookdown.org/yihui/rmarkdown/document-templates.html#) and [Chapter 18](https://bookdown.org/yihui/rmarkdown/new-formats.html) to find out more about this.
+If you want to use the package as a base for your own template, you may want to fork the upstream repository. It will help to read [Chapter 17](https://bookdown.org/yihui/rmarkdown/document-templates.html#) and [Chapter 18](https://bookdown.org/yihui/rmarkdown/new-formats.html) of the upstream text to find out more about this.
