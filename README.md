@@ -11,7 +11,7 @@ Compared to default:
 If you want to trial these templates within R Markdown, you can install the templates directly:
 
 ```
-# install.packages("devtools")
+if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("lewisridden/r-markdown-template")
 ```
 
