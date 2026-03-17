@@ -43,20 +43,24 @@ knitr::opts_chunk$set(time_it = TRUE, echo=TRUE)
 library(doParallel) #multi-threading
 cl <- makePSOCKcluster((detectCores()-2)) # keep 2 cores free
 registerDoParallel(cl)
+
 ```
 
-```{r imports}
+```{r imports, echo=TRUE}
 
 
 ```
 
 ## Worked Questions:
 
-# 
+```{r}
+
+```
 
 ```{r cluster_close, echo=TRUE}
-#boilerplate cluster closing chunk
-# on a crash, this should be called manually, or placed into problem chunks with on.exit(stopCluster(cl)) to prevent leaving workers open and clogging resources on re-running
+# boilerplate 
+# on a crash, this should be called manually.
+# Alternatively, place on.exit(stopCluster(cl)) into chunks being debugged if rerunning the entire file to prevent leaving workers open
 stopCluster(cl)
 
 ```
