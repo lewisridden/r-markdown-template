@@ -3,6 +3,7 @@
 Compared to default:
 - uses a custom LaTeX template which adds extra fields to the header (this fork localises terminology e.g. Unit as opposed to Module)
 - adds multiprocessing via a local PSOCK cluster and closes it on finishing running, or via manual execution on the chunk to do so e.g. crashing on a chunk to avoid hanging threads
+- adds a note for chunk runtime (via [Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/time-chunk.html)). Note this timing function is set to globally True (all code chunks are timed by default, unless specified otherwise).
 - adds common boilerplate e.g import chunk, field for exercises etc
 
 ![Click here to view the sample output.](sample.pdf)
@@ -16,7 +17,7 @@ If you want to trial these templates within R Markdown, you can install the temp
 if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("lewisridden/r-markdown-template")
 ```
-alternatively, you can open the project in RStudio, and then press Install as seen in the tooltip icon up top
+alternatively, you can open the project in RStudio, and then press Install under the Build tab (seen in the same group as Environment, History, Tutorial and others)
 
 
 
