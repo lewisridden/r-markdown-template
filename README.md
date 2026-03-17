@@ -5,7 +5,9 @@ Compared to default:
 - adds multiprocessing via a local PSOCK cluster and closes it on finishing running, or via manual execution on the chunk to do so e.g. crashing on a chunk to avoid hanging threads
 - adds common boilerplate e.g import chunk, field for exercises etc
 
-- 
+![Click here to view the sample output.](sample.pdf)
+
+
 ## Installing the Templates
 
 If you want to trial these templates within R Markdown, you can install the templates directly:
