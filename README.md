@@ -14,6 +14,9 @@ If you want to trial these templates within R Markdown, you can install the temp
 if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("lewisridden/r-markdown-template")
 ```
+alternatively, you can open the project in RStudio, and then press Install as seen in the tooltip icon up top
+
+
 
 This will install the package `MyTemplates`. Once installed, they will be available within the R Markdown templates as shown below:
 
