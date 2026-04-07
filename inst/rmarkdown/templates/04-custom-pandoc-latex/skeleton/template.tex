@@ -150,6 +150,11 @@ $if(compact-title)$
 \setlength{\droptitle}{-2em}
 $endif$
 
+\usepackage{array,calc}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
 % potential fix for new pandoc syntax to fix graphics bugs.
 $if(graphics)$
  \usepackage{graphicx}
